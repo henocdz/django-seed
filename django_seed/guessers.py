@@ -56,7 +56,8 @@ class NameGuesser(object):
         if name == 'country' : return lambda x: faker.country()
         if name == 'title' : return lambda x: faker.sentence()
         if name in ('body','summary', 'description'): return lambda x: faker.text()
-
+        if name in ('lat', 'latitude'): return lambda x: faker.latitude()
+        if name in ('long', 'longitude'): return lambda x: faker.longitude()
 
 class FieldTypeGuesser(object):
 
